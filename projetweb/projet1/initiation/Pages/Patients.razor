@@ -1,0 +1,100 @@
+<!-- Pages/Patients.razor -->
+@page "/patients"
+@inject ApplicationDbContext _context
+@inject NavigationManager NavigationManager
+<h3>Liste des Patients</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Âge</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in patients)
+        {
+            <tr>
+                <td>@patient.ID</td>
+                
+                <td>@patient.Nom</td>
+
+                <td>@patient.Prenom</td>
+
+                <td>@patient.Age</td>
+                <td><button @onclick="() => EditPatient(patient)" class="btn btn-primary" >Modifier</button>
+                <button @onclick="() => DeletePatient(patient)" class="btn btn-danger">Supprimer</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button @onclick="ShowAddForm">Ajouter un Patient</button>
+
+<div class="card">
+@if (showAddForm)
+{
+    <div class="card-body">
+        <h3>Ajouter un Patient</h3>
+        <EditForm Model="@newPatient" OnValidSubmit="AddPatient">
+            <DataAnnotationsValidator />
+            
+            
+            <div>
+                <label>Nom:</label>
+                <InputText @bind-Value="newPatient.Nom" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Prénom:</label>
+                <InputText @bind-Value="newPatient.Prenom" class="form-control" />
+            </div>
+            <div>
+                <label>Âge:</label>
+                <InputNumber @bind-Value="newPatient.Age" class="form-control" />
+            </div>
+            <button class="btn btn-success" type="submit">Ajouter</button>
+        </EditForm>
+    </div>
+}
+</div>
+@code {
+    List<Patient> patients;
+    Patient newPatient = new Patient();
+    bool showAddForm = false;
+
+    protected override void OnInitialized()
+    {
+        patients = _context.Patients.ToList();
+    }
+
+    void ShowAddForm()
+    {
+        showAddForm = true;
+    }
+
+    void AddPatient()
+    {
+        _context.Patients.Add(newPatient);
+        _context.SaveChanges();
+        patients = _context.Patients.ToList();
+        newPatient = new Patient();
+        showAddForm = false;
+    }
+
+    void EditPatient(Patient patient)
+    {
+        NavigationManager.NavigateTo($"/editpatient/{patient.ID}");
+    }
+
+
+    void DeletePatient(Patient patient)
+    {
+        _context.Patients.Remove(patient);
+        _context.SaveChanges();
+        patients = _context.Patients.ToList();
+    }
+}

@@ -1,0 +1,48 @@
+<!-- Pages/EditPatient.razor -->
+@page "/editpatient/{patientId:int}"
+@inject ApplicationDbContext _context
+@inject NavigationManager NavigationManager
+
+<h3>Éditer le Patient</h3>
+
+<EditForm Model="@patient" OnValidSubmit="UpdatePatient">
+    <DataAnnotationsValidator />
+
+    <div>
+        <label>Prénom:</label>
+        <InputText @bind-Value="patient.Nom" />
+    </div>
+    <div>
+        <label>Nom:</label>
+        <InputText @bind-Value="patient.Prenom" />
+    </div>
+    <div>
+        <label>Âge:</label>
+        <InputNumber @bind-Value="patient.Age" />
+    </div>
+
+    <button type="submit">Enregistrer les Modifications</button>
+</EditForm>
+
+@code {
+    Patient patient = new Patient();
+
+    [Parameter] public int PatientId { get; set; }
+
+    protected override void OnInitialized()
+    {
+        // Load patient information based on the provided PatientId
+        patient = _context.Patients.FirstOrDefault(p => p.ID == PatientId);
+
+        if (patient == null)
+        {
+            NavigationManager.NavigateTo("/patients");
+        }
+    }
+
+    void UpdatePatient()
+    {
+        _context.SaveChanges();
+        NavigationManager.NavigateTo("/patients");
+    }
+}

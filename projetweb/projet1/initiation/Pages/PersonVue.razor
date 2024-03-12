@@ -1,0 +1,18 @@
+@page "/test"
+@using initiation.Data;
+
+<h1>Test</h1>
+<h1>Nom : @p.Nom</h1>
+<h2>Prenom : @p.Prenom</h2>
+<h3>Age : @p.Age</h3>
+
+<input @bind-value="p.Age"  type="number" label="Age" />
+
+
+@code {
+        Person p = new Person{
+        Nom = "tamara",
+        Prenom = "tamara",
+    };
+    
+}

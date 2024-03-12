@@ -1,0 +1,18 @@
+@page "/creer"
+@using initiation.Data;
+
+<PageTitle>Nouvelle tâche</PageTitle>
+
+<EditForm Model="@tache" OnValidSubmit="@Creer">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <InputText id="nom" @bind-Value="tache.Nom"/>
+    <button class="btn btn-primary" type="submit">Creer</button>
+</EditForm>
+
+@code {
+    private Todo tache = new Todo();
+    private void Creer(){
+
+    }
+}

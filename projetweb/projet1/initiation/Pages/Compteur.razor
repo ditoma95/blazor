@@ -1,0 +1,18 @@
+<h1>Compteur : @current </h1>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+@code{
+    [Parameter] 
+        public int  Initial { get; set;} = 0;
+    [Parameter]
+    public int step {get; set;} = 1;
+    private int current = 0;
+    protected override void OnInitialized(){
+        current=Initial;
+    }
+    private void IncrementCount(){
+        current+= step;
+    }
+
+}

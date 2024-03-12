@@ -1,0 +1,15 @@
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/initiationConsole.csproj.AssemblyReference.cache
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/initiationConsole.GeneratedMSBuildEditorConfig.editorconfig
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/initiationConsole.AssemblyInfoInputs.cache
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/initiationConsole.AssemblyInfo.cs
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/initiationConsole.csproj.CoreCompileInputs.cache
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/bin/Debug/net7.0/initiationConsole
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/bin/Debug/net7.0/initiationConsole.deps.json
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/bin/Debug/net7.0/initiationConsole.runtimeconfig.json
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/bin/Debug/net7.0/initiationConsole.dll
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/bin/Debug/net7.0/initiationConsole.pdb
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/initiationConsole.dll
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/refint/initiationConsole.dll
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/initiationConsole.pdb
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/initiationConsole.genruntimeconfig.cache
+/home/dimitri/Images/UE LIBRES/Blazor/projetconsole/initiationConsole/obj/Debug/net7.0/ref/initiationConsole.dll
